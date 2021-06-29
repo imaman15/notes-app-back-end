@@ -63,7 +63,6 @@ const getNoteByIdHandler = (request, h) => {
 
   response.code(404);
   return response;
-
 };
 
 const editNoteByIdHandler = (request, h) => {
@@ -120,4 +119,6 @@ const deleteNoteByIdHandler = (request, h) => {
   return response;
 };
 
-module.exports = { addNoteHandler, getAllNotesHandler, getNoteByIdHandler, editNoteByIdHandler, deleteNoteByIdHandler };
+module.exports = {
+  addNoteHandler, getAllNotesHandler, getNoteByIdHandler, editNoteByIdHandler, deleteNoteByIdHandler,
+};
