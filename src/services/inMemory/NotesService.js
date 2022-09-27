@@ -1,4 +1,4 @@
-
+const { nanoid } = require('nanoid');
 
 class NotesService {
   

@@ -1,6 +1,12 @@
 class NotesHandler {
   constructor(service) {
     this._service = service;
+
+    this.postNoteHandler = this.postNoteHandler.bind(this);
+    this.getNotesHandler = this.getNotesHandler.bind(this);
+    this.getNoteByIdHandler = this.getNoteByIdHandler.bind(this);
+    this.putNoteByIdHandler = this.putNoteByIdHandler.bind(this);
+    this.deleteNoteByIdHandler = this.deleteNoteByIdHandler.bind(this);
   }
 
   postNoteHandler(request, h) {
@@ -41,7 +47,7 @@ class NotesHandler {
     };
   }
 
-  getNoteByIdHandler(request) {
+  getNoteByIdHandler(request, h) {
     try {
       const { id } = request.params;
       const note = this._service.getNoteById(id);
@@ -63,7 +69,7 @@ class NotesHandler {
     }
   }
 
-  putNoteByIdHandler(request) {
+  putNoteByIdHandler(request, h) {
     try {
       const { id } = request.params;
  
@@ -84,7 +90,7 @@ class NotesHandler {
     }
   }
 
-  deleteNoteByIdHandler(request) {
+  deleteNoteByIdHandler(request, h) {
     try {
       const { id } = request.params;
       this._service.deleteNoteById(id);

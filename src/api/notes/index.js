@@ -1,6 +1,6 @@
 const NotesHandler = require('./handler');
 const routes = require('./routes');
-
+ 
 module.exports = {
   name: 'notes',
   version: '1.0.0',
@@ -8,5 +8,4 @@ module.exports = {
     const notesHandler = new NotesHandler(service);
     server.route(routes(notesHandler));
   },
-
 };
